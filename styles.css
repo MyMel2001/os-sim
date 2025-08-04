@@ -1,0 +1,143 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #0000ff; /* Light blue wallpaper */
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/* Start Menu */
+.start-menu {
+    position: fixed;
+    top: 40px; /* Below taskbar */
+    left: 0;
+    width: 200px;
+    background-color: #2e2e2e;
+    color: white;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    display: none; /* Hidden by default */
+}
+
+/* Taskbar */
+#taskbar {
+    background-color: #2e2e2e;
+    color: white;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.3);
+}
+
+.taskbar-start {
+    cursor: pointer;
+    padding: 0 10px;
+    font-weight: bold;
+}
+
+#taskbar-icons {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.taskbar-system-tray {
+    display: flex;
+    align-items: center;
+}
+
+#system-clock {
+    margin-left: auto;
+    padding: 0 10px;
+}
+
+/* Desktop */
+#desktop {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    background-color: #198896;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 20px;
+}
+
+.desktop-icon {
+    background-color: #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    min-width: 100px; /* Prevent stretching */
+    width: 100px; /* Fixed width */
+    height: 100px; /* Fixed height */
+}
+
+.desktop-icon {
+    background-color: #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    min-width: 100px; /* Prevent stretching */
+}
+
+.desktop-icon:hover {
+    background-color: #d0d0d0;
+}
+
+/* Application Windows */
+#application-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    pointer-events: none; /* Allow windows to layer */
+}
+
+.window {
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    width: 400px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    position: absolute; /* Allow positioning */
+    top: 50px; /* Start below taskbar */
+    left: 50%;
+    transform: translateX(-50%);
+    pointer-events: auto; /* Enable interaction */
+}
+
+.window-header {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.window-header .close-btn {
+    cursor: pointer;
+    font-weight: bold;
+    color: white;
+}
+
+.window-content {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+}

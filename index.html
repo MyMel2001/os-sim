@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desktop OS Simulation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Start Menu -->
+    <div id="start-menu" class="start-menu">
+        <div class="menu-item" onclick="openApplication('file-explorer')">📁 File Explorer</div>
+        <div class="menu-item" onclick="openApplication('notepad')">📝 Notepad</div>
+        <div class="menu-item" onclick="openApplication('calculator')">🧮 Calculator</div>
+    </div>
+
+    <!-- Taskbar -->
+    <div id="taskbar">
+        <div class="taskbar-start" onclick="toggleStartMenu()">Start</div>
+        <div id="taskbar-icons"></div>
+        <div class="taskbar-system-tray">
+            <span id="system-clock"></span>
+        </div>
+    </div>
+
+    <!-- Desktop -->
+    <div id="desktop">
+        <div class="desktop-icon" onclick="openApplication('file-explorer')">📁 File Explorer</div>
+        <div class="desktop-icon" onclick="openApplication('notepad')">📝 Notepad</div>
+        <div class="desktop-icon" onclick="openApplication('calculator')">🧮 Calculator</div>
+    </div>
+
+    <!-- Application Windows -->
+    <div id="application-container"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
